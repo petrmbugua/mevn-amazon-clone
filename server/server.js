@@ -1,8 +1,24 @@
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
+
+mongoose.connect(
+  process.env.DATABASE,
+  { useUnifiedTopology: true, useNewUrlParser: true },
+  (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log('Connected to the database');
+    }
+  }
+);
 
 app.use(morgan('dev'));
 
