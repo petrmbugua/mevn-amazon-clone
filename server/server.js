@@ -35,10 +35,10 @@ app.use('/api', productRoutes);
 app.use('/api', categoryRoutes);
 app.use('/api', ownerRoutes);
 
-app.listen(3000, (err) => {
+app.listen(8000, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log('Listening on port 3000');
+    console.log('Listening on port 8000');
   }
 });
